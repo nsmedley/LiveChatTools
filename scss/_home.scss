@@ -1,0 +1,92 @@
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-around;
+    &__item {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        background-color:#f5f6fa;
+        width: calc(33% - 4rem);
+        height: 33rem;
+        margin: 2rem;
+        position: relative;
+        overflow: hidden;
+        border-radius: .2rem;
+        cursor: pointer;
+        transition: all .2s ease;
+        &:hover {
+            box-shadow: 0 0 .6rem .2rem rgba(0,0,0,.2);
+        }
+    }
+    &__img {
+        width: 70%;
+        top: 2.5rem;
+        position: absolute;
+    }
+    &__title {
+        width: 100%;
+        position: absolute;
+        bottom: 5%;
+        text-align: center;
+        color: #5c5c5c;
+        font-weight: 400;
+    }
+    &__update {
+        position: absolute;
+        top: 0;
+        background: #badc58;
+        color: #6ab04c;
+        display: block;
+        width: 100%;
+        text-align: center;
+        border-radius: .2rem .2rem 0 0;
+        transform: translateY(-100%);
+        span {
+            font-weight: bold;
+            font-size: 3rem;
+            line-height: 0rem;
+            display: inline-block;
+            transform: rotate(45deg);
+            position: absolute;
+            right: 1rem;
+            top: 1.2rem;
+        }
+
+        &--update {
+            animation: slideDownUpdate .6s 1s forwards;
+        }
+    }
+    &__soon {
+        background:rgba(0,0,0,.6);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 5;
+        span {
+            color:rgba(255,255,255,.8);
+            font-weight:bold;
+            font-size:3.3rem;
+            top: 50%;
+            left: 50%;
+            width: 70%;
+            position: absolute;
+            transform-origin: top left;
+            transform: rotate(-45deg) translate(-50%, -50%);
+            display: inline-block;
+            text-transform: uppercase;
+        }
+    }
+}
+
+@keyframes slideDownUpdate {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}

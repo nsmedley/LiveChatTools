@@ -1,0 +1,55 @@
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    transition: all .4s;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    background-image: linear-gradient( 135deg, rgba(171, 220, 255, 0.788) 10%, rgba(3, 150, 255, 0.815) 100%), url('../img/bg.jpg');
+    background-size: cover;
+    min-height: 100vh;
+    color: #333;
+    padding: 3rem 3rem 0 3rem;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    max-width:140rem;
+    margin:0 auto;
+    position: relative;
+
+    .page-heading {
+        color:#f5f6fa;
+        font-weight: 300;
+        font-size:5rem;
+        text-align: center;
+        position: relative;
+        margin: 0rem 2rem;
+
+        &:before, &:after {
+            height:.2rem;
+            width:33%;
+            background:#f5f6fa;
+            content:'';
+            display:inline-block;
+            position: absolute;
+            top:50%;
+        }
+        &:before {
+            left: 0;
+        }
+        &:after {
+            right: 0;
+        }
+    }
+}
