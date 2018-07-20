@@ -23,17 +23,46 @@
                 <img class="nav__img" src="img/btnIcon.svg"/>
                 <h2 class="nav__title">Button Generator</h2>
             </div>
-            <div class="nav__item">
-                <div class="nav__soon"><span>Coming soon</span></div>
+            <div class="nav__item nav__item--hide">
                 <img class="nav__img" src="img/hideIcon.svg"/>
                 <h2 class="nav__title">Hide Code Generator</h2>
             </div>
             <div class="nav__item nav__item--download">
-                <div class="nav__update">New version available please download! <span>+</span></div>
+                <div class="nav__update">New version available <span>+</span></div>
                 <img class="nav__img" src="img/pluginIcon.svg"/>
                 <h2 class="nav__title">Wordpress Plugin</h2>
             </div>
         </div><!--nav-->
+
+        <h1 class="page-heading page-heading-guides">Guides</h1>
+
+        <div class="navGuides">
+            <div class="navGuides__item">
+                <img class="navGuides__img" src="img/guideIcon.svg"/>
+                <h2 class="navGuides__title">Installation Instructions</h2>
+                <p>This is a guide for how clients can install the live chat code onto there website.</p>
+            </div>
+            <div class="navGuides__item">
+                <img class="navGuides__img" src="img/guideIcon.svg"/>
+                <h2 class="navGuides__title">Installation Instructions</h2>
+                <p>This is a guide for how clients can install the live chat code onto there website.</p>
+            </div>
+            <div class="navGuides__item">
+                <img class="navGuides__img" src="img/guideIcon.svg"/>
+                <h2 class="navGuides__title">Installation Instructions</h2>
+                <p>This is a guide for how clients can install the live chat code onto there website.</p>
+            </div>
+            <div class="navGuides__item">
+                <img class="navGuides__img" src="img/guideIcon.svg"/>
+                <h2 class="navGuides__title">Installation Instructions</h2>
+                <p>This is a guide for how clients can install the live chat code onto there website.</p>
+            </div>
+            <div class="navGuides__item">
+                <img class="navGuides__img" src="img/guideIcon.svg"/>
+                <h2 class="navGuides__title">Installation Instructions</h2>
+                <p>This is a guide for how clients can install the live chat code onto there website.</p>
+            </div>
+        </div><!--navGuides-->
 
         <div class="code">
             <div class="code__wrapper">
@@ -184,21 +213,61 @@
                 </div>
                 
                 <div class="generator__save">
-                    <div class="save__preview"></div>
+                    <div class="save__preview">
+                    </div>
+                    <div class="save__update">Update</div>
                     <div class="save__download">Save</div>
-                    <div class="previewText">Image Preview</div>
                 </div>
 
             </div>
+            <div class="generator__close"><i class="fal fa-times"></i></div>
         </div><!--generator-->
+
+        <div class="hide">
+            <div class="hide__wrapper">
+
+                <div class="hide__option">
+                    <h1>Inlcude URLs</h1>
+                    <p>List the URLs below that you would like the chat button to appear on.</p>
+
+                    <div class="form inlcude">
+                        <input type="text" placeholder="https://">
+                        <input type="text" placeholder="https://">
+                        <input type="text" placeholder="https://">
+                        <input type="text" placeholder="https://">
+                        <input type="text" placeholder="https://"><br>
+                        <div class="add"><i class="fas fa-plus"></i></div>
+                        <div class="remove"><i class="fas fa-minus"></i></div>
+                    </div>
+                </div>
+
+                <div class="hide__option">
+                    <h1>Exclude URLs</h1>
+                    <p>List the URLs below that you would not like the chat button to appear on.</p>
+
+                    <div class="form inlcude">
+                        <input type="text" placeholder="https://">
+                        <input type="text" placeholder="https://">
+                        <input type="text" placeholder="https://">
+                        <input type="text" placeholder="https://">
+                        <input type="text" placeholder="https://"><br>
+                        <div class="add"><i class="fas fa-plus"></i></div>
+                        <div class="remove"><i class="fas fa-minus"></i></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="hide__close"><i class="fal fa-times"></i></div>
+        </div>
     </div><!--wrapper-->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/main.js"></script>
     <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-alpha.12/dist/html2canvas.min.js"></script>
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/367551/fontawesome-iconpicker.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas2image@1.0.5/canvas2image.min.js"></script>
 
 </body>
 </html>

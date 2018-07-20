@@ -255,34 +255,6 @@
     }
 }
 
-@keyframes openCodeModal {
-    0% {
-        transform:scale(0, 0);
-    }
-    100% {
-        transform:scale(1, 1);
-    }
-}
-
-@keyframes closeCodeModal {
-    0% {
-        transform:scale(1, 1);
-    }
-    100% {
-        transform:scale(0, 0);
-    }
-}
-
-
-@keyframes fadeInWrapper {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
 
 //Code output theme (https://github.com/google/code-prettify/blob/master/styles/desert.css)
 pre.prettyprint { display: block; background-color: #333; border:0; font-size:1.3rem;  white-space: pre-wrap; }

@@ -7,7 +7,11 @@ $(document).ready(function() {
     pluginUpdate();
     codeGenerator();
     buttonGenerator();
+    hideGenerator();
 });
+
+
+
 
 //Check if a new version of wordpress plguin has been uploaded and download
 function pluginUpdate() {
@@ -119,24 +123,41 @@ function codeGenerator() {
 
 //Create custom buttons for LiveChat using HTML2Canvas
 function buttonGenerator() {
+    var getCanvas; // global variable
+
     //Add active class to hidden button Modal to display and fade in form
     $('.nav__item--btn').click(function() {
         $('.generator').removeClass('generator--close');
         $('.generator').addClass('generator--active');
         $('.generator__wrapper').addClass('generator__wrapper--active');
     });
+
+    //On close icon click reset classes ready for reopen
+    $('.generator__close').click(function() {
+        $('.generator').removeClass('generator--active');
+        $('.generator').addClass('generator--close');
+        $('.generator__wrapper').removeClass('generator__wrapper--active');
+    });
+
+    $('.save__update').on('click', function () {
+        var element = $(".preview")[0];
+        html2canvas(element, {
+            scale: 2,
+            onrendered: function (canvas) {
+            $(".save__preview").append(canvas);
+            getCanvas = canvas;
+            }
+        });
+    });
     
     //Save image on "save" click
-	$('.save__download').click(function(){
-		html2canvas($('.preview'), { onrendered: function (canvas) {
-				var a = document.createElement('a');
-				// toDataURL defaults to png, so we need to request a jpeg, then convert for file download.
-				a.href = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-				a.download = 'image.png';
-				a.click();
-			}
-		});
-	});
+	$('.save__download').on('click', function () {
+        var imgageData = getCanvas.toDataURL("image/png");
+        // Now browser starts downloading it instead of just showing it
+        var newData = imageData.replace(/^data:image\/png/, "data:application/octet-stream");
+        $("#download").attr("download", "image.png").attr("href", newData);
+    });
+    
 
     //Icon picker
     $('.icp').iconpicker();
@@ -218,4 +239,21 @@ function buttonGenerator() {
             $('.btn-group').hide();
         }
     });
+}
+
+function hideGenerator() {
+    //Add active class to hidden button Modal to display and fade in form
+    $('.nav__item--hide').click(function() {
+        $('.hide').removeClass('hide--close');
+        $('.hide').addClass('hide--active');
+        $('.hide__wrapper').addClass('hide__wrapper--active');
+    });
+
+    //On close icon click reset classes ready for reopen
+    $('.hide__close').click(function() {
+        $('.hide').removeClass('hide--active');
+        $('.hide').addClass('hide--close');
+        $('.hide__wrapper').removeClass('hide__wrapper--active');
+    });
+
 }
