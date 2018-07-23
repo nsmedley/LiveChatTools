@@ -103,37 +103,22 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-content: space-around;
+    opacity: 0;
+    transform: translateY(-2rem);
+    animation: itemFadeInDown .8s 2.3s forwards;
     &__item {
         background-color:#fff;
         width: calc(20% - 4rem);
         height: 27rem;
-        margin: 2rem;
+        margin: 0rem 0rem 2rem 0rem;
         position: relative;
         overflow: hidden;
-        opacity: 0;
-        transform: translateY(-2rem);
         border-radius: .2rem;
         cursor: pointer;
         transition: all .2s ease;
-        animation: itemFadeInDown .8s forwards;
         clip-path: polygon(2rem 0, 100% 0, 100% 100%, 0 100%, 0 2.5rem);
         &:hover {
             box-shadow: 0 0 .6rem .2rem rgba(0,0,0,.2);
-        }
-        &:nth-child(1) {
-            animation-delay: 2.2s;
-        }
-        &:nth-child(2) {
-            animation-delay: 2.5s;
-        }
-        &:nth-child(3) {
-            animation-delay: 2.8s;
-        }
-        &:nth-child(4) {
-            animation-delay: 3.1s;
-        }
-        &:nth-child(5) {
-            animation-delay: 3.4s;
         }
     }
     &__img {
@@ -146,14 +131,15 @@
         text-align: left;
         color: #5c5c5c;
         font-weight: 700;
-        margin-top: 1rem;
         font-size: 2rem;
         float: right;
         width: 65%;
         display: inline-block;
         margin-right: -.4rem;
-        height: 6rem;
         line-height: 2.8rem;
+        position: absolute;
+        top:50%;
+        transform: translateY(-50%);
     }
     p {
         width: 100%;
@@ -161,6 +147,38 @@
         line-height: 2.2rem;
         font-size: 1.4rem;
         font-weight: 400;
+    }
+
+    &__wrapper {
+        position: relative;
+    }
+}
+
+.guidesArrow {
+    color:#fff;
+    font-size:3.5rem;
+    position: absolute;
+    cursor: pointer;
+    top: -6rem;
+
+    &.prev {
+        left:0;
+    }
+
+    &.next {
+        right:0;
+    }
+}
+
+.slick-slider {
+    margin: 2rem;
+}
+
+.slick-slide {
+    margin: 0rem 1rem;
+
+    img {
+        display: inline-block !important;
     }
 }
 

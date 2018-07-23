@@ -4,13 +4,18 @@ $(document).ready(function() {
         localStorage.setItem('pluginUpdate', "0.1");
     }
 
+    $('.navGuides').slick({
+        slidesToShow: 5,
+        
+        prevArrow: '<div class="guidesArrow prev"><i class="fal fa-chevron-circle-left"></i></div>',
+        nextArrow: '<div class="guidesArrow next"><i class="fal fa-chevron-circle-right"></i></div>'
+    });
+
     pluginUpdate();
     codeGenerator();
     buttonGenerator();
     hideGenerator();
 });
-
-
 
 
 //Check if a new version of wordpress plguin has been uploaded and download

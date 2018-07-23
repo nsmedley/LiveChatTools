@@ -18,6 +18,7 @@ body {
     background-image: linear-gradient( to bottom right, rgba(36, 21, 110, 0.8) ,rgba(4, 89, 164, 0.8)), url('../img/bg.jpg');
     background-size: cover;
     min-height: 100vh;
+    overflow: hidden;
     color: #333;
     padding: 3rem 3rem 0 3rem;
     box-sizing: border-box;
