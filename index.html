@@ -38,49 +38,21 @@
         <h1 class="page-heading page-heading-guides">Guides</h1>
 
         <div class="navGuides">
-            <div class="navGuides__item">
+            <div class="navGuides__item" id="install">
                 <div class="navGuides__wrapper">
                     <img class="navGuides__img" src="img/guideIcon.svg"/>
                     <h2 class="navGuides__title">Installation instructions</h2>
                 </div>
                 <p>This is a guide for how clients can install the live chat code onto there website.</p>
             </div>
-            <div class="navGuides__item">
+            <div class="navGuides__item" id="proactive">
                 <div class="navGuides__wrapper">
                     <img class="navGuides__img" src="img/guideIcon.svg"/>
-                    <h2 class="navGuides__title">Guide title</h2>
+                    <h2 class="navGuides__title">Custom proactive chats</h2>
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lobortis, mi pharetra aliquam euismod, nunc leo vulputate nisi, a imperdiet tellus ante in enim. Sed mattis vel libero in mattis.</p>
+                <p>If I client wants a custom proactive chat for a certain page they need to use the following code</p>
             </div>
-            <div class="navGuides__item">
-                <div class="navGuides__wrapper">
-                    <img class="navGuides__img" src="img/guideIcon.svg"/>
-                    <h2 class="navGuides__title">Guide title</h2>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lobortis, mi pharetra aliquam euismod, nunc leo vulputate nisi, a imperdiet tellus ante in enim. Sed mattis vel libero in mattis.</p>
-            </div>
-            <div class="navGuides__item">
-                <div class="navGuides__wrapper">
-                    <img class="navGuides__img" src="img/guideIcon.svg"/>
-                    <h2 class="navGuides__title">Guide title</h2>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lobortis, mi pharetra aliquam euismod, nunc leo vulputate nisi, a imperdiet tellus ante in enim. Sed mattis vel libero in mattis.</p>
-            </div>
-            <div class="navGuides__item">
-                <div class="navGuides__wrapper">
-                    <img class="navGuides__img" src="img/guideIcon.svg"/>
-                    <h2 class="navGuides__title">Guide title</h2>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lobortis, mi pharetra aliquam euismod, nunc leo vulputate nisi, a imperdiet tellus ante in enim. Sed mattis vel libero in mattis.</p>
-            </div>
-            <div class="navGuides__item">
-                <div class="navGuides__wrapper">
-                    <img class="navGuides__img" src="img/guideIcon.svg"/>
-                    <h2 class="navGuides__title">Guide title</h2>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lobortis, mi pharetra aliquam euismod, nunc leo vulputate nisi, a imperdiet tellus ante in enim. Sed mattis vel libero in mattis.</p>
-            </div>
-            <div class="navGuides__item">
+            <div class="navGuides__item" id="guide">
                 <div class="navGuides__wrapper">
                     <img class="navGuides__img" src="img/guideIcon.svg"/>
                     <h2 class="navGuides__title">Guide title</h2>
@@ -284,7 +256,38 @@
             </div>
             <div class="hide__close"><i class="fal fa-times"></i></div>
         </div>
+
+        <div class="guide" data-guide="install">
+            <p>Nothing Here Yet Whoops!</p>           
+        </div>
+
+        <div class="guide" data-guide="proactive">
+            <p><pre class="prettyprint">Moneypenny.openProactiveChat(forced, offlineFallback, msg);</pre></p>
+            
+            <p><strong>Forced</strong> - Should Moneypenny disregard whether or not the visitor has recently closed a chat window? And should Moneypenny disregard whether or not you have “Enable Proactive Chat” checked in your Configurator? (this needs to be set to either True or False)</p>
+            
+            <p><strong>offlineFallback</strong> - Should this function fallback to the Offline form if live chat is currently unavailable? (this needs to be set to either True or False)</p>
+            
+            <p><strong>msg</strong> - When calling .openProactiveChat() manually, you must manually set a first-message for the Proactive Chat. This message will appear to come from your agent, and will show up wherever you call this manually. So in most cases, the best option is to define a very generic message such as, ‘Thanks for visiting. How can I help you?’</p>
+            
+            <p>An example of this in action would be:</p>
+            
+            <p><pre class="prettyprint">Moneypenny.openProactiveChat(true, true, “This is a custom proactive chat”);</pre></p>
+            
+            <p>To set a delay all they need to do is wrap this inside of a setTimeout. Such as the below:</p>
+
+            <p><pre class="prettyprint">setTimeout(function(){
+                Moneypenny.openProactiveChat(true, true, “This is a custom proactive chat”);
+            }, 1000);</pre></p>            
+        </div>
+
+        <div class="guide" data-guide="guide">
+            <p>Nothing Here Yet Whoops!</p>           
+        </div>
     </div><!--wrapper-->
+
+    <div class="overlay"></div>
+    <div class="close"><i class="fal fa-window-close"></i></div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/main.js"></script>

@@ -4,17 +4,11 @@ $(document).ready(function() {
         localStorage.setItem('pluginUpdate', "0.1");
     }
 
-    $('.navGuides').slick({
-        slidesToShow: 5,
-        
-        prevArrow: '<div class="guidesArrow prev"><i class="fal fa-chevron-circle-left"></i></div>',
-        nextArrow: '<div class="guidesArrow next"><i class="fal fa-chevron-circle-right"></i></div>'
-    });
-
     pluginUpdate();
     codeGenerator();
     buttonGenerator();
     hideGenerator();
+    guides();
 });
 
 
@@ -261,4 +255,36 @@ function hideGenerator() {
         $('.hide__wrapper').removeClass('hide__wrapper--active');
     });
 
+}
+
+function guides() {
+    $('.navGuides').slick({
+        slidesToShow: 5,
+        infinite: true,
+        prevArrow: '<div class="guidesArrow prev"><i class="fal fa-chevron-circle-left"></i></div>',
+        nextArrow: '<div class="guidesArrow next"><i class="fal fa-chevron-circle-right"></i></div>'
+    });
+
+    $('.navGuides__item').click(function() {
+        $('.overlay').fadeIn(400);
+        $('.close').fadeIn(400);
+
+        var data_id = $(this).attr("id");
+        console.log(data_id);
+        $('.guide[data-guide=' + data_id + ']').fadeIn(300);
+    });
+
+    $('.close').click(function() {
+        $('.overlay').hide();
+        $('.close').hide();
+        $('.guide').hide();
+    });
+
+    $(document).keyup(function(e) {
+        if (e.keyCode == 27) { // escape key maps to keycode `27`
+            $('.overlay').hide();
+            $('.close').hide();
+            $('.guide').hide();
+       }
+   });
 }
