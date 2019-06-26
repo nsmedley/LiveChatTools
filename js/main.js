@@ -46,6 +46,12 @@ $(".nav__item--wix-download").click(function(e) {
   window.location.href = "guides/wix_setup_guide_2019.pdf";
 })
 
+//WIX guide Download
+$(".nav__item--squarespace-download").click(function(e) {
+  e.preventDefault(); //stop the browser from following
+  window.location.href = "guides/squarespace_setup_guide_2019.pdf";
+})
+
 //Change styling and start the code generator form
 function codeGenerator() {
   //Add active class to hidden Code Modal to display and fade in form
