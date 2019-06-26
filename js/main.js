@@ -42,7 +42,7 @@ $(".nav__item--wordpress-download").click(function(e) {
 
 //WIX guide Download
 $(".nav__item--wix-download").click(function(e) {
-  e.preventDefault(); //stop the browser from following
+  
   window.location.href = "guides/wix_setup_guide_2019.pdf";
 })
 
