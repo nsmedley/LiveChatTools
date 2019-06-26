@@ -37,19 +37,19 @@ function pluginUpdate() {
 //Wordpress guide Download
 $(".nav__item--wordpress-download").click(function(e) {
   e.preventDefault(); //stop the browser from following
-  window.location.href = "guides/wordpress_setup_guide_2019.pdf";
+  window.location.href = "img/wordpress_setup_guide_2019.pdf";
 })
 
 //WIX guide Download
 $(".nav__item--wix-download").click(function(e) {
-  
-  window.location.href = "guides/wix_setup_guide_2019.pdf";
+  e.preventDefault(); //stop the browser from following
+  window.location.href = "img/wix_setup_guide_2019.pdf";
 })
 
 //WIX guide Download
 $(".nav__item--squarespace-download").click(function(e) {
   e.preventDefault(); //stop the browser from following
-  window.location.href = "guides/squarespace_setup_guide_2019.pdf";
+  window.location.href = "img/squarespace_setup_guide_2019.pdf";
 })
 
 //Change styling and start the code generator form
